@@ -15,15 +15,15 @@ public class SpawnManager : MonoBehaviour
     private float chickScale;
     private float roosterBrownScale;
     
-    public int chickenWhiteScaleMulitplier = 1;
-    public int chickenBrownScaleMulitplier = 1;
-    public int chickScaleMulitplier = 1;
-    public int roosterBrownScaleMulitplier = 1;
+    public float chickenWhiteScaleMulitplier = 1.0f;
+    public float chickenBrownScaleMulitplier = 1.0f;
+    public float chickScaleMulitplier = 1.0f;
+    public float roosterBrownScaleMulitplier = 1.0f;
 
     public Vector3 scaleChange;
 
     private float time;
-    private float minSpawnInterval = 0.5f;
+    private float minSpawnInterval = 0.7f;
     
     // Start is called before the first frame update
     void Start()
@@ -68,7 +68,7 @@ public class SpawnManager : MonoBehaviour
         chickenWhiteScale = chickenWhiteScaleMulitplier * 0.09f;
         chickenBrownScale = chickenBrownScaleMulitplier * 0.09f;
         chickScale = chickScaleMulitplier * 0.09f;
-        roosterBrownScale = chickScaleMulitplier * 0.10f;
+        roosterBrownScale = roosterBrownScaleMulitplier * 0.10f;
     }
 
 

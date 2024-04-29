@@ -6,11 +6,15 @@ public class DestroyOutOfBounds : MonoBehaviour
 {
     private float topBound = 30;
     private float lowerBound = -10;
+    private float spawnInterval;
+    private float deltaSpawnInterval = 0.01f;
+
+    private SpawnManager spawnManager;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
     }
 
     // Update is called once per frame
@@ -27,8 +31,13 @@ public class DestroyOutOfBounds : MonoBehaviour
         }
         else if (transform.position.z < lowerBound)
         {
-            Debug.Log("Game Over!");
             Destroy(gameObject);
+
+            spawnInterval = spawnManager.spawnInterval;
+            spawnInterval -= deltaSpawnInterval;
+            spawnManager.spawnInterval = spawnInterval;
+
+            Debug.Log(spawnInterval);
         }
 
     }

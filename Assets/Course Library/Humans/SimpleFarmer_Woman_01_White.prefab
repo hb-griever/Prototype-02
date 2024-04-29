@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 400000}
   - component: {fileID: 9500000}
-  - component: {fileID: 3573645944818302789}
+  - component: {fileID: 1436470591685761155}
+  - component: {fileID: 438687439798119919}
   m_Layer: 0
   m_Name: SimpleFarmer_Woman_01_White
   m_TagString: Untagged
@@ -59,7 +60,28 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &3573645944818302789
+--- !u!65 &1436470591685761155
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.4548492, y: 3.092756, z: 1}
+  m_Center: {x: 0.0067608356, y: 1.494485, z: 0}
+--- !u!114 &438687439798119919
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -68,12 +90,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f68c44d5e85a804aa44de4e0315e60f, type: 3}
+  m_Script: {fileID: 11500000, guid: 38e917c52987daa41af6a0305d9813c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalinput: 0
-  speed: 50
-  xRange: 20
   projectilePrefab: {fileID: 2214334954804885169, guid: c445061b788d7ad49b7bc50e9d3b512c, type: 3}
 --- !u!1 &100004
 GameObject:

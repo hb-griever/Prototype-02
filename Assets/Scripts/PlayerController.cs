@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     private float horizontalInput;
     private float speed = 20.0f;
-    private float xRange = 20;
+    private float xRange = 14;
     public GameObject projectilePrefab;
 
 
@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
             if (pooledProjectile != null)
             {
                 pooledProjectile.SetActive(true); // activate it
-                pooledProjectile.transform.position = transform.position; // position it at player
+                pooledProjectile.transform.position = transform.position + new Vector3(0, 0.25f, 0); // position it at player
             }
         }
 
