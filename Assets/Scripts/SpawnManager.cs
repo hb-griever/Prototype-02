@@ -21,6 +21,11 @@ public class SpawnManager : MonoBehaviour
     public float roosterBrownScaleMulitplier = 1.0f;
 
     public Vector3 scaleChange;
+    public bool playImpact = false;
+
+    public AudioClip hitSound;
+
+    private AudioSource audioSource;
 
     private float time;
     private float minSpawnInterval = 0.7f;
@@ -32,6 +37,8 @@ public class SpawnManager : MonoBehaviour
         chickenBrownScale = 0.09f;
         chickScale = 0.09f;
         roosterBrownScale = 0.10f;
+
+        audioSource = GetComponent<AudioSource>();
     }
     // Update is called once per frame
     void Update()
@@ -45,6 +52,12 @@ public class SpawnManager : MonoBehaviour
         } else if (spawnInterval < minSpawnInterval)
         {
             spawnInterval = minSpawnInterval;
+        }
+
+        if (playImpact == true)
+        {
+            audioSource.PlayOneShot(hitSound, 1.0f);
+            playImpact = false;
         }
     }
 

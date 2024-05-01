@@ -36,8 +36,6 @@ public class DestroyOutOfBounds : MonoBehaviour
             spawnInterval = spawnManager.spawnInterval;
             spawnInterval -= deltaSpawnInterval;
             spawnManager.spawnInterval = spawnInterval;
-
-            Debug.Log(spawnInterval);
         }
 
     }

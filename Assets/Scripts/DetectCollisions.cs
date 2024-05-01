@@ -13,16 +13,19 @@ public class DetectCollisions : MonoBehaviour
 
     private SpawnManager spawnManager;
 
-    private void Start()
+    void Start()
     {
         spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
     }
 
     void OnTriggerEnter(Collider other)
     {
+        //play hit sound
+        spawnManager.playImpact = true;
+
         // Deactivate the wine and destroy the animal
         other.gameObject.SetActive(false);
-        Destroy(gameObject);
+        Destroy(gameObject);        
 
         if (gameObject.CompareTag("Chick"))
         {
@@ -47,10 +50,6 @@ public class DetectCollisions : MonoBehaviour
             brownRoosterScale = spawnManager.roosterBrownScaleMulitplier;
             brownRoosterScale += scaleIncrease;
             spawnManager.roosterBrownScaleMulitplier = brownRoosterScale;
-        }
-        else
-        {
-
         }
     }
 }
