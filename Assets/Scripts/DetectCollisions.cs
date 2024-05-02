@@ -11,17 +11,27 @@ public class DetectCollisions : MonoBehaviour
     private float brownRoosterScale = 1;
     private float scaleIncrease = 0.5f;
 
+    public int pointValue;
+
     private SpawnManager spawnManager;
+    private ScoreManager scoreManager;
 
     void Start()
     {
         spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
+        scoreManager = GameObject.Find("ScoreManager").GetComponent <ScoreManager>();
     }
 
     void OnTriggerEnter(Collider other)
     {
-        //play hit sound
+        // Play hit sound
         spawnManager.playImpact = true;
+
+        // Add score
+        scoreManager.UpdateScore(pointValue);
+
+        // Reduce spawn interval
+        spawnManager.spawnInterval -= 0.01f;
 
         // Deactivate the wine and destroy the animal
         other.gameObject.SetActive(false);

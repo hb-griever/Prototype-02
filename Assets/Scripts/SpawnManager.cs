@@ -29,6 +29,8 @@ public class SpawnManager : MonoBehaviour
 
     private float time;
     private float minSpawnInterval = 0.7f;
+
+    private ScoreManager scoreManager;
     
     // Start is called before the first frame update
     void Start()
@@ -39,14 +41,17 @@ public class SpawnManager : MonoBehaviour
         roosterBrownScale = 0.10f;
 
         audioSource = GetComponent<AudioSource>();
+
+        scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
     }
     // Update is called once per frame
     void Update()
     {  
         time = time + Time.deltaTime;
             
+        // if (time > spawnInterval && spawnInterval >= minSpawnInterval && scoreManager.isGameActive == true)
         if (time > spawnInterval && spawnInterval >= minSpawnInterval)
-        {
+            {
             SpawnRandomAnimal();
             time = 0;
         } else if (spawnInterval < minSpawnInterval)
